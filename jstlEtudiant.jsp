@@ -6,19 +6,30 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title> Liste etudiants </title>
-         
+        <style>
+            UL.tableau li {
+	display:block;
+	float:left;
+	padding:0;
+	width : 33%;
+	height : auto;
+	border: 1px solid #000;
+	text-align:center;
+}
+        </style> 
     </head>
+    
     <body>
         
 
-        <ul>
+        <ul class="tableau">
             <c:forEach items="${ etudiants }" var="etud">
                 
-                    <li>Nom 
+                    <li> 
                     <c:out value="${ etud.getNom() }" />
-                    ID 
                     <c:out value="${ etud.getId() }" />
                     <c:out value="${ etud.getMoyenne() }" />
+                    <c:out value="${ etud.getImage() }" />
                 
                 
             </c:forEach>

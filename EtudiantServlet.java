@@ -18,10 +18,10 @@ public class EtudiantServlet extends HttpServlet {
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException
     {          
-       Etudiant etudiant1 = new Etudiant(1,"Jean",12.3);      
-       Etudiant etudiant2 = new Etudiant(2,"Marie",12.9);       
-       Etudiant etudiant3 = new Etudiant(3,"Amandine",16.5);
-       Etudiant etudiant4 = new Etudiant(4,"Jerry",8.2);
+       Etudiant etudiant1 = new Etudiant(1,"Jean",12.3,"img1.jpg");      
+       Etudiant etudiant2 = new Etudiant(2,"Marie",12.9,"img2.jpg");       
+       Etudiant etudiant3 = new Etudiant(3,"Amandine",16.5,"img3.jpg");
+       Etudiant etudiant4 = new Etudiant(4,"Jerry",8.2,"img4.jpg");
         
         ArrayList<Etudiant> listeEtudiants = new ArrayList<>();
         listeEtudiants.add(etudiant1);
@@ -30,6 +30,7 @@ public class EtudiantServlet extends HttpServlet {
         listeEtudiants.add(etudiant4);
         request.setAttribute("etudiants", listeEtudiants);
         
+       request.getRequestDispatcher("WEB-INF/img").forward(request, response); 
        request.getRequestDispatcher("WEB-INF/jstlEtudiant.jsp").forward(request, response);
     }
 }
