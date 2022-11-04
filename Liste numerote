@@ -1,0 +1,12 @@
+<ol>
+            <c:forEach items="${ etudiants }" var="etud">
+                
+                    <li>Nom 
+                    <c:out value="${ etud.getNom() }" />
+                    ID 
+                    <c:out value="${ etud.getId() }" />
+                    <c:out value="${ etud.getMoyenne() }" />
+                
+                
+            </c:forEach>
+            </ol>
